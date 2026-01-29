@@ -5021,3 +5021,27 @@ body {
   from { transform: translateY(0); }
   to   { transform: translateY(-6px); }
 }
+/* ===== GitHub Pages Layout Fix ===== */
+
+section {
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.navbar,
+.header-main,
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img {
+  max-height: 55px;
+  object-fit: contain;
+}
