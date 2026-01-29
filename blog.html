@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog | Primex Guard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== HEADER (DYNAMIC) ===== -->
+<div id="header"></div>
+
+<!-- ===== BLOG HERO ===== -->
+<section class="contact-hero-pro about-hero">
+  <div class="container contact-hero-pro-inner">
+
+    <div class="contact-hero-card">
+      <h1>Our Blog</h1>
+      <p class="breadcrumb-pro">
+        <a href="index.html">Home</a>
+        <span>→</span>
+        <span>Blog</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BLOG LISTING ===== -->
+<section class="blog-listing">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Latest Articles</h2>
+      <p>Tips, guides & updates from pest control experts</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <!-- BLOG CARD -->
+      <div class="blog-card">
+        <img src="assets/images/blog-1.png" alt="Pest Control Tips">
+        <div class="blog-content">
+          <span class="blog-date">Jan 12, 2026</span>
+          <h3>Top 10 Pest Prevention Tips for Your Home</h3>
+          <p>
+            Learn simple and effective ways to prevent pests and
+            protect your home year-round.
+          </p>
+          <a href="blog/single-post.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="assets/images/blog-2.png" alt="Termite Control">
+        <div class="blog-content">
+          <span class="blog-date">Jan 05, 2026</span>
+          <h3>How to Protect Your Property from Termites</h3>
+          <p>
+            Discover professional strategies to keep termites away
+            and protect your investment.
+          </p>
+          <a href="blog/single-post.html">Read More</a>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="assets/images/blog-3.png" alt="Mosquito Control">
+        <div class="blog-content">
+          <span class="blog-date">Dec 28, 2025</span>
+          <h3>Effective Mosquito Control for Your Garden</h3>
+          <p>
+            Keep your outdoor spaces mosquito-free with expert
+            mosquito control techniques.
+          </p>
+          <a href="blog/single-post.html">Read More</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== BLOG CTA ===== -->
+<section class="about-cta">
+  <div class="container about-cta-inner">
+    <h2>Need Professional Pest Control?</h2>
+    <p>Contact us today for expert advice and inspection.</p>
+    <br>
+    <a href="contact.html" class="btn-primary">
+      Book Inspection
+    </a>
+  </div>
+</section>
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/917495050483" class="float-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+<!-- ===== GLOBAL COMPONENTS ===== -->
+<div id="social-bar"></div>
+<div id="newsletter"></div>
+<div id="footer"></div>
+
+<!-- ===== LOAD COMPONENTS ===== -->
+<script>
+fetch("components/header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("components/social-bar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("social-bar").innerHTML = data);
+
+fetch("components/newsletter.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("newsletter").innerHTML = data);
+
+fetch("components/footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+<script src="assets/js/search.js"></script>
+
+</body>
+</html>

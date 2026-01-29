@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Services | Primex Guard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== HEADER (DYNAMIC) ===== -->
+<div id="header"></div>
+
+<!-- ===== SERVICES HERO ===== -->
+<section class="contact-hero-pro about-hero">
+  <div class="container contact-hero-pro-inner">
+
+    <div class="contact-hero-card">
+      <h1>Our Services</h1>
+      <p class="breadcrumb-pro">
+        <a href="index.html">Home</a>
+        <span>→</span>
+        <span>Services</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SERVICES GRID ===== -->
+<section class="services-grid-section">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Professional Pest Control Solutions</h2>
+      <p>Complete protection for residential and commercial properties</p>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <i class="fa fa-bug"></i>
+        <h3>Termite Control</h3>
+        <p>Advanced termite treatment to protect your property structure.</p>
+        <a href="service/termite-control.html">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fa fa-spider"></i>
+        <h3>Cockroach Control</h3>
+        <p>Effective solutions to eliminate and prevent cockroach infestation.</p>
+        <a href="service/cockroach-control.html">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fa fa-mosquito"></i>
+        <h3>Mosquito Control</h3>
+        <p>Protect your family from mosquito-borne diseases.</p>
+        <a href="service/mosquito-control.html">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fa fa-rat"></i>
+        <h3>Rodent Control</h3>
+        <p>Professional rodent removal and long-term prevention.</p>
+        <a href="service/rodent-control.html">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fa fa-bed"></i>
+        <h3>Bed Bug Control</h3>
+        <p>Complete bed bug extermination with guaranteed results.</p>
+        <a href="service/bed-bug-control.html">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fa fa-home"></i>
+        <h3>Residential Pest Control</h3>
+        <p>Safe and effective pest control for homes and apartments.</p>
+        <a href="services/residential.html">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fa fa-building"></i>
+        <h3>Commercial Pest Control</h3>
+        <p>Customized pest solutions for offices and businesses.</p>
+        <a href="services/commercial.html">Learn More</a>
+      </div>
+
+      <div class="service-card">
+        <i class="fa fa-shield-alt"></i>
+        <h3>General Pest Control</h3>
+        <p>Comprehensive pest management for all common pests.</p>
+        <a href="services/general.html">Learn More</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SERVICE PROCESS ===== -->
+<section class="service-process">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Our Service Process</h2>
+      <p>How we deliver effective pest control</p>
+    </div>
+
+    <div class="process-grid">
+      <div class="process-box">
+        <span>01</span>
+        <h4>Inspection</h4>
+        <p>Thorough inspection to identify pest problems.</p>
+      </div>
+
+      <div class="process-box">
+        <span>02</span>
+        <h4>Customized Plan</h4>
+        <p>Tailored pest control strategy for your property.</p>
+      </div>
+
+      <div class="process-box">
+        <span>03</span>
+        <h4>Treatment</h4>
+        <p>Safe and effective pest treatment implementation.</p>
+      </div>
+
+      <div class="process-box">
+        <span>04</span>
+        <h4>Prevention</h4>
+        <p>Long-term prevention and maintenance solutions.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SERVICES CTA ===== -->
+<section class="about-cta">
+  <div class="container about-cta-inner">
+    <h2>Need Expert Pest Control?</h2>
+    <p>Book your inspection today and get fast, reliable service.</p>
+    <br>
+    <a href="contact.html" class="btn-primary">
+      Book Inspection
+    </a>
+  </div>
+</section>
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/917495050483" class="float-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+
+<!-- ===== GLOBAL COMPONENTS ===== -->
+<div id="social-bar"></div>
+<div id="newsletter"></div>
+<div id="footer"></div>
+
+<!-- ===== LOAD COMPONENTS ===== -->
+<script>
+fetch("components/header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("components/social-bar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("social-bar").innerHTML = data);
+
+fetch("components/newsletter.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("newsletter").innerHTML = data);
+
+fetch("components/footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+<script src="assets/js/search.js"></script>
+
+</body>
+</html>

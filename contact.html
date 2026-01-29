@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | Primex Guard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div id="header">
+
+</div>
+
+
+<!-- ===== CONTACT HERO (WITH BG CARD) ===== -->
+<section class="contact-hero-pro about-hero">
+  <div class="container contact-hero-pro-inner">
+
+    <!-- LEFT CONTENT WITH BG IMAGE CARD -->
+    <div class="contact-hero-card">
+      <h1>Contact Us</h1>
+      <p class="breadcrumb-pro">
+        <a href="../index.html">Home</a>
+        <span>→</span>
+        <span>Contact Us</span>
+      </p>
+    </div>
+
+    
+  </div>
+</section>
+
+  <!-- ===== CONTACT CONTENT SECTION ===== -->
+<section class="contact-modern">
+  <div class="container contact-container-fixed">
+
+    <div class="contact-modern-grid">
+
+      <!-- LEFT INFO COLUMN -->
+      <div class="contact-left-info">
+        <span class="contact-badge">GET IN TOUCH</span>
+        <h2>
+          Reach Out to <span>Us</span> for <br>
+          Assistance or Inquiries
+        </h2>
+        <p>We're Here to Help—Contact Us Today!</p>
+
+        <div class="contact-left-box">
+          <h4>Our Address</h4>
+          <p>SCO 403, Second Floor, Mughal Canal, Karnal</p>
+        </div>
+
+        <div class="contact-left-box">
+          <h4>Contact Info</h4>
+          <p><strong>Phone:</strong> +91 74950 50483</p>
+          <p><strong>Email:</strong> info@primexguardpc.com</p>
+        </div>
+
+        <div class="contact-left-box">
+          <h4>Working Time</h4>
+          <p><strong>Time:</strong> 09:00 AM - 08:00 PM</p>
+          <p><strong>Days:</strong> Monday - Friday</p>
+        </div>
+      </div>
+
+      <!----RIGHT FORM CARD -->
+    <div class="contact-modern-card">
+
+  <span class="contact-badge">
+    <i class="fa fa-user"></i> CONTACT US
+  </span>
+
+  <h2>Send Message</h2>
+
+  <form class="contact-modern-form">
+
+    <div class="form-grid">
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" placeholder="Jordan Walk" required>
+      </div>
+
+      <div class="form-group">
+        <label>Your Email *</label>
+        <input type="email" placeholder="jordan@domain.com" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Subjects *</label>
+      <input type="text" placeholder="write your subject" required>
+    </div>
+
+    <div class="form-group">
+      <label>Write message *</label>
+      <textarea rows="6" placeholder="Write a Message to Inquire" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-send-modern">
+      Send Message <i class="fa fa-arrow-right"></i>
+    </button>
+
+  </form>
+</div>
+
+  </div>
+</section>
+
+<section class="map-section">
+  <iframe
+    src="https://www.google.com/maps?q=Mughal%20Canal%20Karnal&output=embed"
+    loading="lazy">
+  </iframe>
+</section>
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/917495050483" class="float-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+
+<!-- GLOBAL COMPONENTS -->
+<div id="social-bar"></div>
+<div id="newsletter"></div>
+<div id="footer"></div>
+
+<script>
+fetch("components/social-bar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("social-bar").innerHTML = data);
+
+fetch("components/newsletter.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("newsletter").innerHTML = data);
+
+fetch("components/footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+<script>
+fetch("../components/header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+</script>
+<script>
+/* ===== HEADER DYNAMIC LOGIC ===== */
+
+// MOBILE MENU
+const mobileToggle = document.getElementById("mobileToggle");
+const mainNav = document.getElementById("mainNav");
+
+if (mobileToggle) {
+  mobileToggle.addEventListener("click", () => {
+    mainNav.classList.toggle("open");
+  });
+}
+
+// ACTIVE MENU BASED ON URL
+const links = document.querySelectorAll(".navbar a");
+const currentPath = window.location.pathname;
+
+links.forEach(link => {
+  const href = link.getAttribute("href");
+  if (href && currentPath.includes(href.replace("../",""))) {
+    link.classList.add("active");
+  }
+});
+</script>
+<script src="assets/js/search.js"></script>
+<script src="assets/js/contact.js"></script>
+</body>
+</html>

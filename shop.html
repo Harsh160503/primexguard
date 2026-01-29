@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shop | Primex Guard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- FONT AWESOME -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- ===== HEADER (DYNAMIC) ===== -->
+<div id="header"></div>
+
+<!-- ===== SHOP HERO ===== -->
+<section class="contact-hero-pro about-hero">
+  <div class="container contact-hero-pro-inner">
+
+    <div class="contact-hero-card">
+      <h1>Shop</h1>
+      <p class="breadcrumb-pro">
+        <a href="index.html">Home</a>
+        <span>→</span>
+        <span>Shop</span>
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SHOP PRODUCTS ===== -->
+<section class="shop-section">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Pest Control Products</h2>
+      <p>High quality products for effective pest management</p>
+    </div>
+
+      <div class="shop-grid">
+       
+
+  <!-- PRODUCT 1 -->
+  <div class="product-card" id="p1">
+
+    <img src="assets/images/termite.png" alt="Anti Termite Spray">
+    <h3>Anti Termite Spray</h3>
+    <p class="price">₹499</p>
+    <button class="btn-primary"
+      onclick="addToCart('p1','Anti Termite Spray',499,'assets/images/shop/product-1.jpg')">
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product-card" id="p2">
+
+    <img src="assets/images/cockroach.png" alt="Cockroach Control Gel">
+    <h3>Cockroach Control Gel</h3>
+    <p class="price">₹349</p>
+    <button class="btn-primary"
+      onclick="addToCart('p2','Cockroach Control Gel',349,'assets/images/shop/product-2.jpg')">
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- PRODUCT 3 -->
+  <div class="product-card" id="p3">
+   <img src="assets/images/mosquito.png" alt="Mosquito Repellent Spray">
+    <h3>Mosquito Repellent Spray</h3>
+    <p class="price">₹299</p>
+    <button class="btn-primary"
+      onclick="addToCart('p3','Mosquito Repellent Spray',299,'assets/images/shop/product-3.jpg')">
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- PRODUCT 4 -->
+  <div class="product-card" id="p4">
+    <img src="assets/images/rodent.png" alt="Rodent Trap Kit">
+    <h3>Rodent Trap Kit</h3>
+    <p class="price">₹699</p>
+    <button class="btn-primary"
+      onclick="addToCart('p4','Rodent Trap Kit',699,'assets/images/shop/product-4.jpg')">
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- PRODUCT 5 -->
+  <div class="product-card" id="p5">
+
+    <img src="assets/images/bedbug.png" alt="Bed Bug Killer Spray">
+    <h3>Bed Bug Killer Spray</h3>
+    <p class="price">₹399</p>
+    <button class="btn-primary"
+      onclick="addToCart('p5','Bed Bug Killer Spray',399,'assets/images/shop/product-5.jpg')">
+      Add to Cart
+    </button>
+  </div>
+
+  <!-- PRODUCT 6 -->
+  <div class="product-card" id="p6">
+    <img src="assets/images/ant.png" alt="Ant Control Powder">
+    <h3>Ant Control Powder</h3>
+    <p class="price">₹249</p>
+    <button class="btn-primary"
+      onclick="addToCart('p6','Ant Control Powder',249,'assets/images/shop/product-6.jpg')">
+      Add to Cart
+    </button>
+  </div>
+
+</div>
+
+
+<!-- ===== SHOP CTA ===== -->
+<section class="about-cta">
+  <div class="container about-cta-inner">
+    <h2>Need Professional Service Instead?</h2>
+    <p>Book a professional inspection for guaranteed results.</p>
+    <br>
+    <a href="contact.html" class="btn-primary">
+      Book Inspection
+    </a>
+  </div>
+</section>
+  </div>
+</section><!-- FLOATING BUTTONS -->
+<a href="https://wa.me/917495050483" class="float-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+
+<!-- ===== GLOBAL COMPONENTS ===== -->
+<div id="social-bar"></div>
+<div id="newsletter"></div>
+<div id="footer"></div>
+
+<!-- ===== LOAD COMPONENTS ===== -->
+<script>
+fetch("components/header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("components/social-bar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("social-bar").innerHTML = data);
+
+fetch("components/newsletter.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("newsletter").innerHTML = data);
+
+fetch("components/footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+<script src="assets/js/cart.js">
+    </script>
+<script src="assets/js/search.js"></script>
+
+</body>
+</html>

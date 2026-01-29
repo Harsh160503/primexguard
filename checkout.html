@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | Primex Guard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+</head>
+<body>
+
+<div id="header"></div>
+
+<!-- ===== CHECKOUT HERO ===== -->
+<section class="contact-hero-pro about-hero">
+  <div class="container contact-hero-pro-inner">
+    <div class="contact-hero-card">
+      <h1>Checkout</h1>
+      <p class="breadcrumb-pro">
+        <a href="index.html">Home</a> → <span>Checkout</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CHECKOUT SECTION ===== -->
+<section class="checkout-section">
+  <div class="container checkout-grid">
+
+    <!-- LEFT: BILLING -->
+    <div class="checkout-form">
+      <h2>Billing Details</h2>
+
+      <div class="form-row">
+        <input type="text" id="customerName" placeholder="Full Name" required>
+        <input type="email" id="customerEmail" placeholder="Email Address" required>
+      </div>
+
+      <div class="form-row">
+        <input type="text" id="customerPhone" placeholder="Phone Number" required>
+        <input type="text" id="customerCity" placeholder="City" required>
+      </div>
+
+      <input type="text" id="customerAddress" placeholder="Full Address" required>
+
+<div class="payment-section">
+  <h3>Payment Method</h3>
+
+  <div class="payment-options">
+
+    <!-- COD -->
+    <label class="payment-card">
+      <input type="radio" name="payment" value="COD" checked>
+      <div class="pay-box">
+        <i class="fas fa-truck"></i>
+        <span>Cash on Delivery</span>
+      </div>
+    </label>
+
+    <!-- Razorpay -->
+    <label class="payment-card">
+      <input type="radio" name="payment" value="RAZORPAY">
+      <div class="pay-box">
+        <img src="assets/images/payments/razorpay.png" alt="Razorpay">
+        <span>Razorpay</span>
+      </div>
+    </label>
+
+    <!-- PhonePe -->
+    <label class="payment-card">
+      <input type="radio" name="payment" value="PHONEPE">
+      <div class="pay-box">
+        <img src="assets/images/payments/phonepe.png" alt="PhonePe">
+        <span>PhonePe</span>
+      </div>
+    </label>
+
+    <!-- UPI -->
+    <label class="payment-card">
+      <input type="radio" name="payment" value="UPI">
+      <div class="pay-box">
+        <i class="fas fa-qrcode"></i>
+        <span>UPI QR</span>
+      </div>
+    </label>
+
+  </div>
+</div>
+
+      <button class="btn-primary full-btn" id="placeOrderBtn">
+        Place Order
+      </button>
+    </div>
+
+    <!-- RIGHT: ORDER SUMMARY -->
+    <div class="checkout-summary">
+      <h3>Your Order</h3>
+
+      <!-- DYNAMIC ITEMS -->
+      <div id="checkout-items"></div>
+
+      <div class="summary-row">
+        <span>Shipping</span>
+        <span>₹50</span>
+      </div>
+
+      <div class="summary-row total">
+        <span>Total</span>
+        <span id="checkout-total">₹0</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div id="social-bar"></div>
+<div id="newsletter"></div>
+<div id="footer"></div>
+
+<!-- ===== LOAD COMPONENTS ===== -->
+<script>
+fetch("components/header.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("header").innerHTML = data);
+
+fetch("components/social-bar.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("social-bar").innerHTML = data);
+
+fetch("components/newsletter.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("newsletter").innerHTML = data);
+
+fetch("components/footer.html")
+  .then(res => res.text())
+  .then(data => document.getElementById("footer").innerHTML = data);
+</script>
+
+<script src="assets/js/cart.js"></script>
+<script>
+document.getElementById("placeOrderBtn").addEventListener("click", async () => {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  const paymentMethod = getSelectedPayment();
+
+  const orderData = {
+    customerName: customerName.value,
+    email: customerEmail.value,
+    phone: customerPhone.value,
+    address: customerAddress.value,
+    items: cart,
+    totalAmount: cart.reduce((sum, i) => sum + i.price * i.qty, 0) + 50,
+    paymentMethod
+  };
+
+  // ===== COD FLOW =====
+  if (paymentMethod === "COD") {
+    orderData.paymentStatus = "PENDING";
+    placeOrder(orderData);
+  }
+
+  // ===== RAZORPAY FLOW =====
+  if (paymentMethod === "RAZORPAY") {
+    startRazorpay(orderData.totalAmount, orderData);
+  }
+
+  // ===== PHONEPE (UI ONLY FOR NOW) =====
+  if (paymentMethod === "PHONEPE") {
+    alert("PhonePe integration will be added via backend gateway.");
+  }
+
+  // ===== UPI QR FLOW =====
+  if (paymentMethod === "UPI") {
+    document.getElementById("upiModal").classList.add("active");
+  }
+});
+</script>
+<script>
+function startRazorpay(amount, orderData) {
+  const options = {
+    key: "YOUR_RAZORPAY_KEY_ID",   // 🔴 Replace with your real key
+    amount: amount * 100,
+    currency: "INR",
+    name: "Primex Guard Pest Control",
+    description: "Service & Product Payment",
+    image: "assets/images/logo.png",
+
+    handler: function (response) {
+      orderData.paymentId = response.razorpay_payment_id;
+      orderData.paymentStatus = "PAID";
+      placeOrder(orderData);
+    },
+
+    prefill: {
+      name: orderData.customerName,
+      email: orderData.email,
+      contact: orderData.phone
+    },
+
+    theme: {
+      color: "#2f6bff"
+    }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.open();
+}
+</script>
+<script>
+async function placeOrder(orderData) {
+  try {
+    const res = await fetch("http://localhost:5000/api/orders", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(orderData)
+    });
+
+    const result = await res.json();
+
+    if (result.success) {
+      alert("Order placed successfully!");
+      localStorage.removeItem("cart");
+      window.location.href = "success.html";
+    } else {
+      alert("Order failed. Try again.");
+    }
+
+  } catch (err) {
+    alert("Server error. Make sure backend is running.");
+    console.error(err);
+  }
+}
+</script>
+
+<script>
+function getSelectedPayment() {
+  return document.querySelector('input[name="payment"]:checked').value;
+}
+</script>
+
+<script src="assets/js/search.js"></script><div id="upiModal" class="video-modal">
+  <div class="video-modal-overlay" onclick="closeUpi()"></div>
+
+  <div class="video-modal-content" style="max-width:420px;padding:30px;background:#fff;">
+    <h3 style="text-align:center;">Scan to Pay via UPI</h3>
+    <img src="assets/images/payments/upi-qr.png" style="width:100%;margin-top:15px;">
+    <button onclick="closeUpi()" class="btn-primary full-btn" style="margin-top:15px;">
+      Done
+    </button>
+  </div>
+</div>
+
+<script>
+function closeUpi() {
+  document.getElementById("upiModal").classList.remove("active");
+}
+</script>
+<script>
+function loadCheckoutItems() {
+  const cart = JSON.parse(localStorage.getItem("cart")) || [];
+  const container = document.getElementById("checkout-items");
+  const totalEl = document.getElementById("checkout-total");
+
+  let subtotal = 0;
+  container.innerHTML = "";
+
+  if (cart.length === 0) {
+    container.innerHTML = "<p>Your cart is empty.</p>";
+    totalEl.textContent = "₹0";
+    return;
+  }
+
+  cart.forEach(item => {
+    subtotal += item.price * item.qty;
+
+    container.innerHTML += `
+      <div class="summary-row">
+        <span>${item.name} × ${item.qty}</span>
+        <span>₹${item.price * item.qty}</span>
+      </div>
+    `;
+  });
+
+  const total = subtotal + 50;
+  totalEl.textContent = "₹" + total;
+}
+
+document.addEventListener("DOMContentLoaded", loadCheckoutItems);
+</script>
+<!-- FLOATING BUTTONS -->
+<a href="https://wa.me/917495050483" class="float-whatsapp" target="_blank">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<button class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa fa-arrow-up"></i>
+</button>
+
+
+</body>
+</html>
