@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- MAIN CSS -->
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="/assets/css/responsive.css">
 
   <!-- FONT AWESOME -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -57,7 +57,7 @@
     </div>
 
     <div class="about-image">
-      <img src="assets/images/about-company.png" alt="Our Company">
+      <img src="/assets/images/about-company.png" alt="Our Company">
     </div>
 
   </div>
@@ -221,30 +221,30 @@
   <i class="fa fa-arrow-up"></i>
 </button>
 
-<!-- ===== GLOBAL COMPONENTS ===== -->
+<!-- ===== GLOBAL /components ===== -->
 <div id="social-bar"></div>
 <div id="newsletter"></div>
 <div id="footer"></div>
 
-<!-- ===== LOAD COMPONENTS ===== -->
+<!-- ===== LOAD /components ===== -->
 <script>
-fetch("/primexguard/components/header.html")
+fetch("/components/header.html")
   .then(res => res.text())
   .then(data => document.getElementById("header").innerHTML = data);
 
-fetch("/primexguard/components/social-bar.html")
+fetch("/components/social-bar.html")
   .then(res => res.text())
   .then(data => document.getElementById("social-bar").innerHTML = data);
 
-fetch("/primexguard/components/newsletter.html")
+fetch("/components/newsletter.html")
   .then(res => res.text())
   .then(data => document.getElementById("newsletter").innerHTML = data);
 
-fetch("/primexguard/components/footer.html")
+fetch("/components/footer.html")
   .then(res => res.text())
   .then(data => document.getElementById("footer").innerHTML = data);
 </script>
-<script src="assets/js/search.js"></script>
+<script src="/assets/js/search.js"></script>
 <script>
 const revealItems = document.querySelectorAll(
   ".about-image img, .mission-box, .why-box"

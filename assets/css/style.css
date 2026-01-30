@@ -642,7 +642,7 @@ body {
 .contact-hero-card {
   background: 
     linear-gradient(rgba(11,44,109,0.75), rgba(11,44,109,0.75)),
-    url("assets/images/contact-bg-card.jpg") center/cover no-repeat;
+    url("/assets/images/contact-bg-card.jpg") center/cover no-repeat;
   
   padding: 50px 0px;
   border-radius: 20px;
