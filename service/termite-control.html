@@ -5,8 +5,8 @@
   <title>Termite Control Services | Primex Guard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/responsive.css">
+  <link rel="stylesheet" href="/primexguard/assets/css/style.css">
+  <link rel="stylesheet" href="/primexguard/assets/css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -95,7 +95,7 @@
   <div class="container service-cta-inner">
     <h2>Protect Your Property from Termites Today</h2>
     <p>Schedule a professional termite inspection now.</p><br>
-    <a href="../contact.html" class="btn-primary">Get Started</a>
+    <a href="/contact.html" class="btn-primary">Get Started</a>
   </div>
 </section>
 
@@ -105,9 +105,9 @@
 
 <!-- LOAD COMPONENTS -->
 <script>
-fetch("../components/header.html").then(r=>r.text()).then(d=>header.innerHTML=d);
-fetch("../components/newsletter.html").then(r=>r.text()).then(d=>newsletter.innerHTML=d);
-fetch("../components/footer.html").then(r=>r.text()).then(d=>footer.innerHTML=d);
+fetch("/primexguard/components/header.html").then(r=>r.text()).then(d=>header.innerHTML=d);
+fetch("/primexguard/components/newsletter.html").then(r=>r.text()).then(d=>newsletter.innerHTML=d);
+fetch("/primexguard/components/footer.html").then(r=>r.text()).then(d=>footer.innerHTML=d);
 </script>
 
 </body>

@@ -6,8 +6,8 @@
   <title>Cart | Primex Guard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="/primexguard/assets/css/style.css">
+  <link rel="stylesheet" href="/primexguard/assets/css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
@@ -69,25 +69,25 @@
 
 <!-- ===== LOAD COMPONENTS ===== -->
 <script>
-fetch("components/header.html")
+fetch("/primexguard/components/header.html")
   .then(res => res.text())
   .then(data => document.getElementById("header").innerHTML = data);
 
-fetch("components/social-bar.html")
+fetch("/primexguard/components/social-bar.html")
   .then(res => res.text())
   .then(data => document.getElementById("social-bar").innerHTML = data);
 
-fetch("components/newsletter.html")
+fetch("/primexguard/components/newsletter.html")
   .then(res => res.text())
   .then(data => document.getElementById("newsletter").innerHTML = data);
 
-fetch("components/footer.html")
+fetch("/primexguard/components/footer.html")
   .then(res => res.text())
   .then(data => document.getElementById("footer").innerHTML = data);
 </script>
 
-<script src="assets/js/cart.js"></script>
-<script src="assets/js/search.js"></script>
+<script src="/primexguard/assets/js/cart.js"></script>
+<script src="/primexguard/assets/js/search.js"></script>
 <!-- FLOATING BUTTONS -->
 <a href="https://wa.me/917495050483" class="float-whatsapp" target="_blank">
   <i class="fab fa-whatsapp"></i>
