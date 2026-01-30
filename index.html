@@ -5,10 +5,15 @@
   <base href="/primexguard/">
   <title>Primex Guard Pest Control</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
-  <link rel="stylesheet" href="/assets/css/style.css">
-<link rel="stylesheet" href="/assets/css/responsive.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body>
 <div id="header">
 
@@ -66,11 +71,11 @@
 
       <div class="why-images">
         <div class="why-img-card">
-          <img src="/assets/images/pest2.png" alt="Pest Control Service">
+          <img src="assets/images/pest2.png" alt="Pest Control Service">
         </div>
 
         <div class="why-img-card">
-          <img src="/assets/images/pest3.png" alt="Professional Cleaning">
+          <img src="assets/images/pest3.png" alt="Professional Cleaning">
         </div>
 
         <div class="play-btn" onclick="openVideoModal()">
@@ -170,11 +175,11 @@
       <!-- IMAGE CARDS -->
       <div class="why-pro-images">
         <div class="why-img-pro-card">
-          <img src="/assets/images/pest2.png" alt="Pest Control Technician">
+          <img src="assets/images/pest2.png" alt="Pest Control Technician">
         </div>
 
         <div class="why-img-pro-card">
-          <img src="/assets/images/pest3.png" alt="Professional Pest Service">
+          <img src="assets/images/pest3.png" alt="Professional Pest Service">
           <div class="play-btn-pro" onclick="openVideoModal()">
             <i class="fa fa-play"></i>
           </div>
@@ -294,7 +299,7 @@
 <div class="team-card-pro">
 
   <div class="team-img-pro">
-    <img src="/assets/images/team/team-1.png" alt="Rohan Kumar">
+    <img src="assets/images/team/team-1.png" alt="Rohan Kumar">
 
     <!-- SHARE BUTTON -->
     <div class="team-share">
@@ -327,7 +332,7 @@
 <div class="team-card-pro">
 
   <div class="team-img-pro">
-    <img src="/assets/images/team/team-2.png" alt="Priya Patel">
+    <img src="assets/images/team/team-2.png" alt="Priya Patel">
 
     <!-- SHARE BUTTON -->
     <div class="team-share">
@@ -360,7 +365,7 @@
 <div class="team-card-pro">
 
   <div class="team-img-pro">
-    <img src="/assets/images/team/team-3.png" alt="Priya Patel">
+    <img src="assets/images/team/team-3.png" alt="Priya Patel">
 
     <!-- SHARE BUTTON -->
     <div class="team-share">
@@ -393,7 +398,7 @@
 <div class="team-card-pro">
 
   <div class="team-img-pro">
-    <img src="/assets/images/team/team-4.png" alt="Priya Patel">
+    <img src="assets/images/team/team-4.png" alt="Priya Patel">
 
     <!-- SHARE BUTTON -->
     <div class="team-share">
@@ -532,7 +537,7 @@
       <!-- HOME CARD -->
       <div class="serve-card home-card">
         <div class="serve-image">
-          <img src="/assets/images/home-pest.png" alt="Home Pest Control">
+          <img src="assets/images/home-pest.png" alt="Home Pest Control">
         </div>
 
         <div class="serve-content">
@@ -574,7 +579,7 @@
         </div>
 
         <div class="serve-image">
-          <img src="/assets/images/office-pest.png" alt="Office Pest Control">
+          <img src="assets/images/office-pest.png" alt="Office Pest Control">
         </div>
 
       </div>
@@ -632,7 +637,7 @@ fetch("/components/header.html")
   .then(res => res.text())
   .then(data => document.getElementById("header").innerHTML = data);
 </script>
-<script src="/assets/js/cart.js"></script>
+<script src="assets/js/cart.js"></script>
   <script>
 document.addEventListener("click", function(e) {
   const openBtn = document.getElementById("offcanvas-open");
@@ -710,7 +715,7 @@ counters.forEach(counter => counterObserver.observe(counter));
 
     <div class="video-wrapper">
       <video id="video-mp4" controls autoplay>
-        <source src="/assets/videos/promo.mp4.mp4" type="video/mp4">
+        <source src="assets/videos/promo.mp4.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
@@ -754,7 +759,7 @@ function headerSearch() {
   window.location.href = "shop.html?search=" + encodeURIComponent(query);
 }
 </script>
-<script src="/assets/js/search.js"></script>
+<script src="assets/js/search.js"></script>
 <script>
 function scrollTeam(direction) {
   const slider = document.getElementById("teamSlider");
