@@ -105,12 +105,12 @@ treatments reduce breeding and protect your home and surroundings.
 <div id="newsletter"></div>
 <div id="footer"></div>
 
-<!-- LOAD /components -->
+<!-- LOAD components -->
 <script>
-fetch("/components/header.html").then(r=>r.text()).then(d=>header.innerHTML=d);
+fetch("components/header.html").then(r=>r.text()).then(d=>header.innerHTML=d);
 
-fetch("/components/newsletter.html").then(r=>r.text()).then(d=>newsletter.innerHTML=d);
-fetch("/components/footer.html").then(r=>r.text()).then(d=>footer.innerHTML=d);
+fetch("components/newsletter.html").then(r=>r.text()).then(d=>newsletter.innerHTML=d);
+fetch("components/footer.html").then(r=>r.text()).then(d=>footer.innerHTML=d);
 </script>
 
 </body>

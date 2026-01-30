@@ -67,21 +67,21 @@
 <div id="newsletter"></div>
 <div id="footer"></div>
 
-<!-- ===== LOAD /components ===== -->
+<!-- ===== LOAD components ===== -->
 <script>
-fetch("/components/header.html")
+fetch("components/header.html")
   .then(res => res.text())
   .then(data => document.getElementById("header").innerHTML = data);
 
-fetch("/components/social-bar.html")
+fetch("components/social-bar.html")
   .then(res => res.text())
   .then(data => document.getElementById("social-bar").innerHTML = data);
 
-fetch("/components/newsletter.html")
+fetch("components/newsletter.html")
   .then(res => res.text())
   .then(data => document.getElementById("newsletter").innerHTML = data);
 
-fetch("/components/footer.html")
+fetch("components/footer.html")
   .then(res => res.text())
   .then(data => document.getElementById("footer").innerHTML = data);
 </script>
