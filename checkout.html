@@ -6,8 +6,8 @@
   <title>Checkout | Primex Guard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="/primexguard/assets/css/style.css">
-  <link rel="stylesheet" href="/primexguard/assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
@@ -66,7 +66,7 @@
     <label class="payment-card">
       <input type="radio" name="payment" value="RAZORPAY">
       <div class="pay-box">
-        <img src="/primexguard/assets/images/payments/razorpay.png" alt="Razorpay">
+        <img src="assets/images/payments/razorpay.png" alt="Razorpay">
         <span>Razorpay</span>
       </div>
     </label>
@@ -75,7 +75,7 @@
     <label class="payment-card">
       <input type="radio" name="payment" value="PHONEPE">
       <div class="pay-box">
-        <img src="/primexguard/assets/images/payments/phonepe.png" alt="PhonePe">
+        <img src="assets/images/payments/phonepe.png" alt="PhonePe">
         <span>PhonePe</span>
       </div>
     </label>
@@ -141,7 +141,7 @@ fetch("/primexguard/components/footer.html")
   .then(data => document.getElementById("footer").innerHTML = data);
 </script>
 
-<script src="/primexguard/assets/js/cart.js"></script>
+<script src="assets/js/cart.js"></script>
 <script>
 document.getElementById("placeOrderBtn").addEventListener("click", async () => {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -193,7 +193,7 @@ function startRazorpay(amount, orderData) {
     currency: "INR",
     name: "Primex Guard Pest Control",
     description: "Service & Product Payment",
-    image: "/primexguard/assets/images/logo.png",
+    image: "assets/images/logo.png",
 
     handler: function (response) {
       orderData.paymentId = response.razorpay_payment_id;
@@ -248,12 +248,12 @@ function getSelectedPayment() {
 }
 </script>
 
-<script src="/primexguard/assets/js/search.js"></script><div id="upiModal" class="video-modal">
+<script src="assets/js/search.js"></script><div id="upiModal" class="video-modal">
   <div class="video-modal-overlay" onclick="closeUpi()"></div>
 
   <div class="video-modal-content" style="max-width:420px;padding:30px;background:#fff;">
     <h3 style="text-align:center;">Scan to Pay via UPI</h3>
-    <img src="/primexguard/assets/images/payments/upi-qr.png" style="width:100%;margin-top:15px;">
+    <img src="assets/images/payments/upi-qr.png" style="width:100%;margin-top:15px;">
     <button onclick="closeUpi()" class="btn-primary full-btn" style="margin-top:15px;">
       Done
     </button>
