@@ -5108,3 +5108,8 @@ body {
   }
 }
 */
+.feature-icon {
+  font-size: 36px;
+  color: #2f6bff;
+  margin-bottom: 15px;
+}
