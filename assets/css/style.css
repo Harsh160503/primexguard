@@ -5057,7 +5057,7 @@ body {
 }
 /* PREVENT HEADER OVERLAP */
 .contact-hero-pro {
-  margin-top: 120px; /* adjust if header height changes */
+  margin-top:0px; /* adjust if header height changes */
 }
 /* CONTACT HERO BACKGROUND FIX */
 .contact-hero-pro {
@@ -5096,7 +5096,7 @@ body {
 .contact-hero-card {
   animation: fadeSlide 0.8s ease forwards;
 }
-
+/*
 @keyframes fadeSlide {
   from {
     opacity: 0;
@@ -5107,3 +5107,4 @@ body {
     transform: translateY(0);
   }
 }
+*/
