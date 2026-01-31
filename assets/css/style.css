@@ -5045,3 +5045,65 @@ section {
   max-height: 55px;
   object-fit: contain;
 }
+/* FIX HEADER OVERFLOW */
+.main-header,
+.top-bar {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-x: hidden;
+}
+/* PREVENT HEADER OVERLAP */
+.contact-hero-pro {
+  margin-top: 120px; /* adjust if header height changes */
+}
+/* CONTACT HERO BACKGROUND FIX */
+.contact-hero-pro {
+  position: relative;
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.contact-hero-pro-inner {
+  display: flex;
+  align-items: center;
+}
+
+.contact-hero-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 40px 50px;
+  max-width: 420px;
+  color: #fff;
+}
+.contact-hero-card h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.breadcrumb-pro {
+  font-size: 14px;
+  opacity: 0.9;
+}
+.contact-hero-card {
+  animation: fadeSlide 0.8s ease forwards;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
